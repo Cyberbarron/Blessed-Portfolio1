@@ -1,0 +1,494 @@
+body{
+    margin: 0;
+    background: #0b0c10;
+    color: #f4f0e6;
+    font-family: system-ui, sans-serif;
+}
+
+
+
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+}
+
+#intro .half {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: #0b0c10;
+}
+
+#intro .top { top: 0; }
+#intro .bot { bottom: 0; }
+
+#intro h1 {
+  position: relative;
+  margin: 0;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(60px, 21vw, 300px);
+  letter-spacing: -0.035em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #f4f0e6;
+}
+
+#go {
+  position: relative;
+  font: 500 16px system-ui, sans-serif;
+  background: #f4f0e6;
+  color: #0b0c10;
+  border: 0;
+  border-radius: 99px;
+  padding: 16px 28px;
+  cursor: pointer;
+}
+
+.hero {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 22vh 5vw 8vh;
+}
+
+.tag {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1.5px solid #f4f0e6;
+  border-radius: 99px;
+  padding: 6px 14px;
+  margin-bottom: 3vh;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(46px, 9vw, 110px);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.line { display: block; overflow: hidden; padding-bottom: 0.08;}
+.hero em { font-style: normal; color: #7cff4f; }
+
+.hero p {
+  max-width: 46ch;
+  font-size: clamp(16px, 2.2vw, 21px);
+  line-height: 1.5;
+  margin: 4vh 0;
+}
+
+.btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.btn {
+  color: #f4f0e6;
+  text-decoration: none;
+  border: 1.5px solid #f4f0e6;
+  border-radius: 99px;
+  padding: 15px 26px;
+}
+
+.btn.solid { background: #f4f0e6; color: #0a1f17; }
+
+.tapes {
+    position: relative;
+    height: clamp(150px, 22vw, 230px);
+    overflow: hidden;
+    background: #0e0e10;
+}
+
+.tape {
+    position: absolute;
+    left: -5%;
+    right: -5%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 14px 0;
+    font: 800 clamp(20px, 4vw, 40px) 'Bricolage Grotesque', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    color: #0a1f17;
+}
+
+.t1 {top: 22%; background: #7cff4f; transform: rotate(-2.2deg); }
+.t2 { top: 44%; background: #ff7ac8; transform: rotate(1.8deg); }
+
+.tape div {
+    display: inline-block;
+    padding-right: 0.6em;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 3vw;
+    padding: 14vh 5vw;
+    background: #0e0e10;
+}
+
+.stats b {
+    display: block;
+    font: 800 clamp(56px, 11vw, 150px)/1 'Bricolage Grotesque', system-ui, sans-serif;
+    color: #7cff4f;
+    letter-spacing: -0.04em;
+}
+
+.stat span {
+    font-size: 15px;
+    opacity: 0.75;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+#grid {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero > *:not(canvas) {
+    position: relative;
+    z-index: 1;
+}
+
+#iname span { display: inline-block; }
+
+.hint { font-size: 13px; color: rgba(244, 240, 230, 0.35); opacity: 0.5; margin-top: 4vh; }
+
+.work {
+  background-color: #f4f0e6;
+  background-image:
+    linear-gradient(rgba(14,14,16,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,14,16,0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: #0e0e10;
+  padding: 12vh 5vw;
+}
+
+.work h2 {
+  font: 800 clamp(44px, 10vw, 130px)/0.95 'Bricolage Grotesque', system-ui, sans-serif;
+  letter-spacing: -0.035em;
+  margin: 0 0 6vh;
+}
+
+.sheet {
+  position: relative;
+  background: #fbf8f1;
+  border: 2px solid #0e0e10;
+  box-shadow: 8px 8px 0 #0e0e10;
+  padding: 14px;
+  max-width: 640px;
+}
+
+.draw {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border: 1.5px solid #0e0e10;
+  background-image:
+    linear-gradient(rgba(45,75,255,0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45,75,255,0.14) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.draw::before {
+  content: "";
+  position: absolute;
+  width: 46%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  left: 12%;
+  top: 18%;
+  background: var(--c);
+  border: 2px solid #0e0e10;
+}
+
+.draw::after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  bottom: 16%;
+  width: 38%;
+  height: 30%;
+  border: 2px solid #0e0e10;
+  background: repeating-linear-gradient(45deg, transparent 0 6px, #0e0e10 6px 7px);
+}
+
+.dim {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 400 11px monospace;
+  margin: 10px 0 12px;
+}
+
+.dim::before,
+.dim::after {
+  content: "";
+  flex: 1;
+  border-top: 1.5px solid #0e0e10;
+}
+
+.tb {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  border: 1.5px solid #0e0e10;
+  margin: 0;
+}
+
+.tb div { padding: 8px 10px; border-right: 1.5px solid #0e0e10; }
+.tb div:last-child { border-right: 0; }
+.tb dt { font: 400 10px monospace; text-transform: uppercase; opacity: 0.55; }
+
+.tb dd {
+  margin: 0;
+  font: 800 clamp(16px, 2.4vw, 24px) 'Bricolage Grotesque', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.sheet p { font-size: 15px; line-height: 1.5; margin: 14px 2px 8px; max-width: 48ch; }
+.stk { font: 500 12px monospace; opacity: 0.7; margin: 0 2px 4px; }
+
+.stamp {
+    position: absolute;
+    right: 6%;
+    top: 28%;
+    font: 800 clamp(22px, 4vw, 40px) 'Bricolage Grotesque', system-ui, sans-serif;;
+    letter-spacing: 0.06em;
+    color: #ff4a2b;
+    border: 4px solid #ff4a2b;
+    border-radius: 8px;
+    padding: 4px 14px;
+    transform: rotate(-12deg);
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+.board { perspective: 1200px; }
+.sheet { transform-style: preserve-3d; will-change: transform; }
+
+.toolkit {
+  background: #7cff4f;
+  color: #0b0c10;
+  padding: 12vh 5vw;
+}
+
+.toolkit h2 {
+  font: 800 clamp(44px, 10vw, 130px)/0.95 'Bricolage Grotesque', system-ui, sans-serif;
+  letter-spacing: -0.035em;
+  margin: 0 0 6vh;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.box {
+  background: #f4f0e6;
+  border: 2px solid #0b0c10;
+  border-radius: 22px;
+  padding: 26px;
+}
+
+.box h3 {
+  font: 800 30px/1 'Bricolage Grotesque', system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
+}
+
+.box ul { list-style: none; margin: 0; padding: 0; }
+
+.box li {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-top: 1px solid rgba(14, 14, 16, 0.18);
+}
+
+.box small { opacity: 0.55; }
+
+.rules {
+  background: #2d4bff;
+  color: #f4f0e6;
+  padding: 12vh 5vw;
+}
+
+.rules h2 {
+  font: 800 clamp(44px, 10vw, 130px)/0.95 'Bricolage Grotesque', system-ui, sans-serif;
+  letter-spacing: -0.035em;
+  margin: 0 0 6vh;
+}
+
+.rule {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 10px 18px;
+  padding: 4vh 0;
+  border-top: 1.5px solid rgba(244, 240, 230, 0.35);
+}
+
+.rule i {
+  font: 800 16px 'Bricolage Grotesque', system-ui, sans-serif;
+  font-style: normal;
+  color: #7cff4f;
+}
+
+.rule h3 {
+  font: 800 clamp(26px, 5vw, 60px)/1 'Bricolage Grotesque', system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.rule p {
+  grid-column: 2;
+  max-width: 52ch;
+  line-height: 1.5;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.about {
+    background: #f4f0e6;
+    color: #0b0c10;
+    padding: 16vh 5vw;
+}
+
+.about p {
+    font: 500 clamp(26px, 5vw, 64px)/1.15 'Bricolage Grotesque', system-ui, sans-serif ;
+    letter-spacing: -0.02em;
+    max-width: 22em;
+    margin: 0;
+}
+
+.about mark {
+    background: #7cff4f;
+    color: inherit;
+    padding: 0 0.15em;
+}
+
+.contact {
+  background: #0e0e10;
+  color: #f4f0e6;
+  text-align: center;
+  padding: 14vh 5vw 18vh;
+}
+
+.contact small {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.contact h2 {
+  font: 800 clamp(44px, 10vw, 130px)/0.95 'Bricolage Grotesque', system-ui, sans-serif;
+  letter-spacing: -0.035em;
+  margin: 3vh 0 4vh;
+}
+
+.big {
+  display: inline-block;
+  font: 800 clamp(34px, 9vw, 120px)/1 'Bricolage Grotesque', system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  color: #7cff4f;
+  text-decoration: none;
+  margin: 2vh 0 5vh;
+}
+
+.big:hover { color: #f4f0e6; }
+
+.credit {
+  margin-top: 8vh;
+  font-size: 14px;
+  opacity: 0.55;
+}html { scroll-behavior: smooth; }
+
+#pads {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 60;
+  display: flex;
+  gap: 4px;
+  background: #0e0e10;
+  border: 1px solid rgba(244, 240, 230, 0.2);
+  padding: 6px;
+  border-radius: 99px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+#pads a {
+  color: #f4f0e6;
+  text-decoration: none;
+  font: 500 13px system-ui, sans-serif;
+  padding: 10px 12px;
+  border-radius: 99px;
+}
+
+#pads a.on {
+  background: #7cff4f;
+  color: #0e0e10;
+}
+
+@media (max-width: 480px) {
+  #pads a span { display: none; }
+}
+
+.index { margin-top: 12vh; }
+
+.index h3 {
+  font: 500 13px monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin: 0 0 2vh;
+}
+
+.irow {
+  display: grid;
+  grid-template-columns: 50px 1fr auto;
+  gap: 4px 14px;
+  align-items: center;
+  padding: 2.4vh 0;
+  border-top: 1.5px solid #0e0e10;
+  color: inherit;
+  text-decoration: none;
+  transition: padding-left 0.3s, background 0.3s;
+}
+
+.irow:last-child { border-bottom: 1.5px solid #0e0e10; }
+.irow .no { font: 400 12px monospace; opacity: 0.5; }
+
+.irow b {
+  font: 800 clamp(24px, 4.5vw, 52px)/1 'Bricolage Grotesque', system-ui, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.irow .tools { grid-column: 2; font: 400 12px monospace; opacity: 0.6; }
+
+.irow .st {
+  grid-row: 1 / span 2;
+  grid-column: 3;
+  font: 500 12px monospace;
+  border: 1.5px solid #0e0e10;
+  border-radius: 99px;
+  padding: 4px 12px;
+}
+
+.irow:hover { padding-left: 2vw; background: #7cff4f; }
