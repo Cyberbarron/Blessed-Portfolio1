@@ -492,3 +492,19 @@ body{
 }
 
 .irow:hover { padding-left: 2vw; background: #7cff4f; }
+
+.open {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin: 10px 2px 4px;
+  font: 500 13px 'DM Sans', system-ui, sans-serif;
+  color: #0e0e10;
+  background: #7cff4f;
+  border: 1.5px solid #0e0e10;
+  border-radius: 99px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.open:hover { background: #0e0e10; color: #7cff4f; }
